@@ -18,7 +18,7 @@ async function initializeFavourites(){
         for(id in favouriteMovies[movie]){
         var movieId = (JSON.parse(favouriteMovies[movie][id]))
             // console.log(movieId)
-            const resp = await fetch(`http://www.omdbapi.com/?apikey=69f4820b&i=${movieId}`)
+            const resp = await fetch(`https://www.omdbapi.com/?apikey=69f4820b&i=${movieId}`)
             const data = await resp.json()
             // console.log(data)
             renderFavourites(data)
@@ -70,7 +70,7 @@ function renderFavourites(movie){
 async function fetchData(){
 var x = document.getElementById("search").value;
 
-    const resp = await fetch(`http://www.omdbapi.com/?apikey=69f4820b&s=${x}`)
+    const resp = await fetch(`https://www.omdbapi.com/?apikey=69f4820b&s=${x}`)
     const data = await resp.json()
     console.log(data)
     results = data.Search
@@ -101,7 +101,7 @@ async function addToFavourites(id){
     console.log(id)
     var moviesArr = [];
     var movieId;
-    const resp = await fetch(`http://www.omdbapi.com/?apikey=69f4820b&i=${id}&plot=full`)
+    const resp = await fetch(`https://www.omdbapi.com/?apikey=69f4820b&i=${id}&plot=full`)
     const data = await resp.json()
     movieId = JSON.stringify(data.imdbID);    //storing imdb Id of movie in localStorage and localStorage can only store string so we covert array in string and then store it
     moviesArr = JSON.parse(localStorage.getItem("favourites"))  // copied the localStrage id first and then pushing the new id in that array
@@ -146,14 +146,14 @@ function renderList(results){
 
 function movieDetails(id){
     let idStr = localStorage.setItem("movieid", id)
-    window.location.href = "http://127.0.0.1:5500/Basics/imdb_clone/movieDetails.html"
+    window.location.href = "https://127.0.0.1:5500/Basics/imdb_clone/movieDetails.html"
     
 }
 
 async function showMovieDetails(){
     let movieId = localStorage.getItem("movieid")
     // console.log(movieId)
-    const resp = await fetch(`http://www.omdbapi.com/?apikey=69f4820b&i=${movieId}&plot=full`)
+    const resp = await fetch(`https://www.omdbapi.com/?apikey=69f4820b&i=${movieId}&plot=full`)
     const movie = await resp.json()
     // console.log(movie)
     const div = document.createElement('div')
