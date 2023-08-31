@@ -146,7 +146,7 @@ function renderList(results){
 
 function movieDetails(id){
     let idStr = localStorage.setItem("movieid", id)
-    window.location.href = "https://127.0.0.1:5500/Basics/imdb_clone/movieDetails.html"
+    window.location.href = "https://nisarg39.github.io/imdbClone//movieDetails.html"
     
 }
 
