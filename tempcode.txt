@@ -1,0 +1,14 @@
+<div id="movieCard-vertical" class="text-white">
+                    <div class="col-4 p-0 m-0">
+                        <img class= "small-movie-img col-4" src=${results[movie].Poster}>
+                        <div class="col-8" style="background-color: white">
+                        
+                        </div>
+                        <h3>${results[movie].Title}</h3>
+                        <img id=${results[movie].imdbID} onclick="addToFavourites(this.id)" src="https://cdn-icons-png.flaticon.com/128/2589/2589175.png" class="fav-img"></img>
+                        <ul class="movie-gen">
+                            <li>Type - ${results[movie].Type}</li>
+                            <li>Year - ${results[movie].Year}</li>
+                        </ul>
+                    </div>
+                    </div>
