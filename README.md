@@ -3,6 +3,8 @@
 
 Using Omdb Api to fetch data and display it in Front-End
 
+Deployed - https://nisarg39.github.io/imdbClone/
+
 # Features 
 1. Search Movie or Web Series 
 2. Save them to favourites and also remove from favourites
