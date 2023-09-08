@@ -112,6 +112,7 @@ async function addToFavourites(id){
         window.alert(data.Title , "added to favourites");
     }else{
         moviesArr.push(movieId);
+        let movieStr = JSON.stringify(moviesArr) 
         localStorage.setItem("favourites", movieStr)
         window.alert(data.Title , "added to favourites");
     }
