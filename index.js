@@ -104,11 +104,17 @@ async function addToFavourites(id){
     const resp = await fetch(`https://www.omdbapi.com/?apikey=69f4820b&i=${id}&plot=full`)
     const data = await resp.json()
     movieId = JSON.stringify(data.imdbID);    //storing imdb Id of movie in localStorage and localStorage can only store string so we covert array in string and then store it
-    moviesArr = JSON.parse(localStorage.getItem("favourites"))  // copied the localStrage id first and then pushing the new id in that array
-    moviesArr.push(movieId);
-    let movieStr = JSON.stringify(moviesArr) 
-    localStorage.setItem("favourites", movieStr)
-    window.alert(data.Title , "added to favourites");
+   if(localStorage.getItem("favourites")){
+        moviesArr = JSON.parse(localStorage.getItem("favourites"))  // copied the localStrage id first and then pushing the new id in that array
+        moviesArr.push(movieId);
+        let movieStr = JSON.stringify(moviesArr) 
+        localStorage.setItem("favourites", movieStr)
+        window.alert(data.Title , "added to favourites");
+    }else{
+        moviesArr.push(movieId);
+        localStorage.setItem("favourites", movieStr)
+        window.alert(data.Title , "added to favourites");
+    }
 
 }
 
